@@ -1,27 +1,50 @@
-# AftOfAi
+Bootrap hasznalata :angular.json fileba "styles": [
+"src/styles.css",
+"node_modules/bootstrap/dist/css/bootstrap.min.css"
+],
+"scripts": [
+"node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+]
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.7.
+app routing-ban kell megadni az utvonalakat
+![alt text](image.png)
 
-## Development server
+appcomponent.htmlben router outlet hasznalata
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+app moudel.tsbe importok koze beirni :   HttpClientModule,
+    FormsModule
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+    ng g s http 
+    httpService fajlba brini
 
-## Running unit tests
+a. Az oldal tetején lévő – a kategóriákat tartalmazó – lenyíló lista lehetőségeinek
+feltöltéséhez használja a /api/categories URL-en található REST API
+függvényt!
+b. A kiválasztott kategóriához tartozó festmények adatait a kiszolgáló szerver
+/api/paintings/{categoryId} URL-jén található REST API
+függvénnyel kérdezze le! (Az URL-ben szereplő { categoryId } helyére a
+kiválasztott kategória azonosítóját illessze be!)
+c. Az adatokat a kiadott mintához hasonlóan jelenítse meg. A megjelenítés során
+használhatja a források könyvtárban található állományokat.
+httpservice.ts
+![alt text](image-3.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+homecomponent.ts
+![alt text](image-4.png)
 
-## Running end-to-end tests
+homecomponent.html
+![alt text](image-5.png)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+Hozzon létre egy újabb komponenst, amely a licitálást fogja elvégezni:
+a. A komponens létrehozása során használhatja a források könyvtárban
+szereplő állományokat.
+b. A „Send offer” gombra kattintva az űrlapon szereplő adatokat küldje el a
+szerver /api/bid URL-re az API leírás alapján!
+c. Sikeres küldés esetén jelenítse meg az alábbi feliratot
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
